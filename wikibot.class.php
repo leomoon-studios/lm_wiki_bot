@@ -25,7 +25,7 @@ class lm_wiki_bot {
      *                      'url'=>string
      *                      ]
      * 
-     * You just need username and password for edit action. if you want to use search or get recent changes just set your local url:
+     * You just need a username and password for edit action. if you want to use search or get recent changes just set your local URL:
      * <code>
      * $bot = new lm_wiki_bot(['url'=>'https://fa.wikipedia.org']);
      * </code>
@@ -271,6 +271,9 @@ class lm_wiki_bot {
         if(isset($params['pageid'])) $requestInfo['pageid'] = $params['pageid'];
         if(isset($params['section'])) $requestInfo['section'] = $params['section'];
         if(isset($params['sectiontitle'])) $requestInfo['sectiontitle'] = $params['sectiontitle'];
+        if(isset($params['undo'])) $requestInfo['undo'] = $params['undo'];
+        if(isset($params['undoafter'])) $requestInfo['undoafter'] = $params['undoafter'];
+        if(isset($params['redirect'])) $requestInfo['redirect'] = $params['redirect'];
         $result = $this->post($requestInfo);
         return $result;
     }
