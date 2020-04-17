@@ -29,12 +29,12 @@ Perform a full text search
 
 Simple:
 ```php
-$bot->search(['keyword'=>"something"]);
+$results = $bot->search(['keyword'=>"something"]);
 ```
 
 Advanced:
 ```php
- $bot->search([
+ $results = $bot->search([
         'offset'=>10,
         'limit'=>10,
         'sort'=>'last_edit_desc'
@@ -56,12 +56,12 @@ List all the recent changes to the wiki, in the same manner as Special:RecentCha
 
 Simple:
 ```php
-$bot->recent();
+$results = $bot->recent();
 ```
 
 Advanced:
 ```php
-$bot->recent([
+$results = $bot->recent([
         'limit'=>30,
         'ns'=>0,
         'sort'=>'older',
@@ -81,12 +81,12 @@ Parameters:
 ### Content
 Get the original wikitext content of a page:
 ```php
-$bot->content("Software bot");
+$result = $bot->content("Software bot");
 ```
 
 Get parsed HTML content of a page:
 ```php
-$bot->content("Software bot", "text");
+$result = $bot->content("Software bot", "text");
 ```
 
 ### Add/Edit
